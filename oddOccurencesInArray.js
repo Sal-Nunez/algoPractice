@@ -17,7 +17,25 @@ const expected3 = 4; // there is a pair of 4s but one 4 has no pair.
 
 const nums4 = [5, 2, 6, 2, 3, 1, 6, 3, 2, 5, 2];
 const expected4 = 1;
-
-function oddOccurrencesInArray(nums) {}
-
+function oddOccurrencesInArray(nums) {
+    const freq = {}
+    var newArray = []
+    for(var i = 0; i < nums.length; i++) {
+        if(nums[i] in freq) {
+            freq[nums[i]] += 1;
+        }
+        else {
+            freq[nums[i]] = 1;
+        }
+    }
+    for(var key in freq) {
+        if (freq.hasOwnProperty(key)) {
+            if (freq[key] % 2 == 1) {
+                newArray.push(key)
+            }
+        }
+    }
+    return newArray
+}
+console.log(oddOccurrencesInArray(nums2))
 /*****************************************************************************/

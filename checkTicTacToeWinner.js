@@ -42,8 +42,36 @@ const expected4 = true;
  * @param {Array<Array<string>>} grid
  * @returns {boolean} Whether there is a winner or not.
  */
-function checkTicTacToeWinner(grid) { }
 
-module.exports = { checkTicTacToeWinner };
+function checkTicTacToeWinner(grid) {
+    if (grid[0][0] == grid[0][1] && grid[0][1] == grid[0][2]) {
+        return true
+    }
+    else if (grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0]) {
+        return true
+    }
+    else if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
+        return true
+    }
+    else if (grid[1][0] == grid[1][1] && grid[1][1] == grid[1][2]) {
+        return true
+    }
+    else if (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2]) {
+        return true
+    }
+    else if (grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2]) {
+        return true
+    }
+    else if (grid[0][1] == grid[1][1] && grid[1][1] == grid[2][1]) {
+        return true
+    }
+    else if (grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2]) {
+        return true
+    }
+    else {
+        return false
+    }
+}
 
+console.log(checkTicTacToeWinner(grid4));
 /*****************************************************************************/
